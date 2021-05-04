@@ -9,7 +9,7 @@
 1. 生成配置文件
 
     ```bash
-    docker run --rm -it --name="mirai" -v ./mirai/config:/app/config xzsk2/mirai-docker:latest
+    docker run --rm -it --name="mirai" -v $PWD/mirai/config:/app/config xzsk2/mirai-docker:latest
     ```
 
 2. 编辑`./mirai/config/net.mamoe.mirai-api-http/setting.yml`，样例如下
@@ -46,13 +46,19 @@
 
     ```
 
-3. 启动，端口根据`mirai-api-http`的配置文件修改，默认端口为`8080`
+3. 进入容器配置自动登录，输入`/help`查看自动登录指令
 
     ```bash
-    docker run -d --name="mirai" -p 8080:8080 -v ./mirai/config:/app/config xzsk2/mirai-docker:latest
+    docker run --rm -it --name="mirai" -p 8080:8080 -v $PWD/mirai/config:/app/config xzsk2/mirai-docker:latest
     ```
 
-4. 更新，使用 [Watchtower](https://github.com/containrrr/watchtower)
+4. 配置完自动登陆后再次启动使用此命令
+
+    ```bash
+    docker run -d --name="mirai" -p 8080:8080 -v $PWD/mirai/config:/app/config xzsk2/mirai-docker:latest
+    ```
+
+5. 更新，使用 [Watchtower](https://github.com/containrrr/watchtower)
 
     ```bash
     docker run --rm \
