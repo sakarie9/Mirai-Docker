@@ -2,6 +2,8 @@
 
 [Mirai Console Loader](https://github.com/iTXTech/mirai-console-loader) 和 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 的Docker启动环境
 
+**建议使用 [EFB-QQ-Mirai-Docker](https://github.com/xzsk2/EFB-QQ-Mirai-Docker) 进行QQ到Telegram的双向消息转发**
+
 ## 使用
 
 1. 生成配置文件
