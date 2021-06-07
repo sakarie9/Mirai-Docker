@@ -15,4 +15,4 @@ RUN apk --no-cache add openjdk11-jre wget &&\
 
 EXPOSE 8080
 
-CMD ["./mcl"]
+ENTRYPOINT exec java $JAVA_OPTS -jar mcl.jar
